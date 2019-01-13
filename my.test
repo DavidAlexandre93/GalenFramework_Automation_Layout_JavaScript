@@ -1,0 +1,22 @@
+
+@@ set domain testapp.galenframework.com
+	
+
+@@ table myDevices
+    | deviceName | size    | tags   | 
+    | desktop    | 1024x768| desktop|
+
+@@ parameterized using myDevices
+Home page on ${deviceName} 
+    http://${domain}/  ${size} 
+        check specs/home.gspec  --include "${tags}"
+        run  tests/logToMyNotes.js
+        check specs/mynotes.gspec --include "${tags}"
+        run  tests/eventoTest.js
+        check specs/eventTeste.gspec --include "${tags}"
+        
+        
+        
+        
+   
+        
